@@ -30,8 +30,6 @@ class MainViewModel @Inject constructor(
             .collectLatest { todoList ->
                 if(todoList.isNotEmpty()) _uiState.value  = UiState.Success(todoList.toTodoModel())
                 else _uiState.value = UiState.Empty
-
-                Log.d("todoList" , uiState.value.isEmpty.toString())
             }
     }
 
