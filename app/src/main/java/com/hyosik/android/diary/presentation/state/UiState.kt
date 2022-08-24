@@ -1,10 +1,10 @@
 package com.hyosik.android.diary.presentation.state
 
-import com.hyosik.android.diary.domain.model.Todo
+import com.hyosik.android.diary.data.local.model.TodoModel
 
 sealed class UiState {
     open val cause : String = ""
-    open val dailyWeatherList : List<Todo> = emptyList()
+    open val todoList : List<TodoModel> = emptyList()
 
     val isLoading: Boolean get() = this is Loading
     val isEmpty: Boolean get() = this is Empty
@@ -16,7 +16,7 @@ sealed class UiState {
     object Empty : UiState()
 
     data class Success(
-        override val dailyWeatherList: List<Todo>
+        override val todoList: List<TodoModel>
     ) : UiState()
 
     data class Error(
