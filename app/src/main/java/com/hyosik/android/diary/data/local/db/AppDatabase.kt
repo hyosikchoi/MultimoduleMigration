@@ -1,8 +1,7 @@
-package com.hyosik.android.diary.local.db
+package com.hyosik.android.diary.data.local.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.hyosik.android.diary.local.model.TodoEntity
 
 @Database(
     entities = [TodoEntity::class],

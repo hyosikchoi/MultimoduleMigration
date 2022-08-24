@@ -1,20 +1,19 @@
-package com.hyosik.android.diary.local.db
+package com.hyosik.android.diary.data.local.db
 
 import androidx.room.*
-import com.hyosik.android.diary.local.model.TodoEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface TodoDao {
 
     @Query("SELECT * FROM TodoEntity")
-    suspend fun getAllList() : List<TodoEntity>
+    fun getAllList() : Flow<List<TodoEntity>>
 
     @Query("SELECT * FROM TodoEntity WHERE id = :id")
     suspend fun getById(id : Long) : TodoEntity?
 
     @Insert
-    suspend fun insert(todoEntity: TodoEntity) : Long
+    fun insert(todoEntity: TodoEntity)
 
     @Update
     suspend fun update(todoEntity: TodoEntity)
