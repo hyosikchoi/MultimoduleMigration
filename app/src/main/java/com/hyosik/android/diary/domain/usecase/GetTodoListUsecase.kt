@@ -7,5 +7,5 @@ import kotlinx.coroutines.flow.Flow
 class GetTodoListUsecase(
     private val todoListRepository: TodoListRepository
 ) {
-    suspend operator fun invoke() : Flow<List<Todo>>  = todoListRepository.getTodoList()
+    operator fun invoke() : Flow<List<Todo>>  = todoListRepository.getTodoList()
 }
