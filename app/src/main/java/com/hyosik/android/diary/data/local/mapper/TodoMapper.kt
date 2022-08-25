@@ -17,7 +17,6 @@ fun List<TodoEntity>.toTodo() : List<TodoModel> =
 
 fun Todo.toTodoEntity() : TodoEntity =
     TodoEntity(
-        id = this.id,
         title = this.title,
         description = this.description,
         hasCompleted = this.hasCompleted,

@@ -18,13 +18,13 @@ class TodoListRepositoryImpl @Inject constructor(
     private val ioDispatcher: CoroutineDispatcher
 ) : TodoListRepository {
 
-    override suspend fun getTodoList(): Flow<List<Todo>> {
+    override fun getTodoList(): Flow<List<Todo>> {
         return todoDao.getAllList().map { todoEntityList ->
             todoEntityList.toTodo()
         }
     }
 
-    override suspend fun insertTodo(todo: Todo) {
+    override fun insertTodo(todo: Todo) {
         todoDao.insert(todoEntity = todo.toTodoEntity())
     }
 

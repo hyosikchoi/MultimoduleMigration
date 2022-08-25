@@ -5,9 +5,9 @@ import kotlinx.coroutines.flow.Flow
 
 interface TodoListRepository {
 
-    suspend fun getTodoList() : Flow<List<Todo>>
+    fun getTodoList() : Flow<List<Todo>>
 
-    suspend fun insertTodo(todo: Todo)
+    fun insertTodo(todo: Todo)
 
     fun updateTodo(todo: Todo)
 

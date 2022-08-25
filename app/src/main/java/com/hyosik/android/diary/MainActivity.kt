@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
+import com.hyosik.android.diary.data.local.model.TodoModel
 import com.hyosik.android.diary.databinding.ActivityMainBinding
 import com.hyosik.android.diary.presentation.adapter.TodoAdapter
 import com.hyosik.android.diary.presentation.viewmodel.MainViewModel
@@ -26,5 +27,18 @@ class MainActivity : AppCompatActivity() {
         binding.executePendingBindings()
         binding.todoListRecyclerView.adapter = todoAdapter
         viewModel.fetchTodoList()
+
+        binding.insertTodoButton.setOnClickListener {
+            viewModel.insertTodo(
+                TodoModel(
+                    _id = null,
+                    _title = "Test",
+                    _description = "Test 입니다.",
+                    _hasCompleted = false,
+                    _lock = false
+                )
+            )
+        }
+
     }
 }

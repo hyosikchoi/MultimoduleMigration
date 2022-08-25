@@ -9,6 +9,8 @@ import com.hyosik.android.diary.domain.usecase.InsertTodoUseCase
 import com.hyosik.android.diary.presentation.mapper.toTodoModel
 import com.hyosik.android.diary.presentation.state.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -32,8 +34,10 @@ class MainViewModel @Inject constructor(
                 else _uiState.value = UiState.Empty
             }
     }
-
-    fun insertTodo(todoModel: TodoModel)  = viewModelScope.launch {
+    /** Room은 LiveData 혹은 Flow 타입의 형태를 return 받으면 알아서 IO Thread 로 수행하고 반환 한다.*/
+    /** 그래서 Dispatchers 를 명시할 필요 없지만 그게 아니라면 아래와 같이 백그라운드 스레드를 명시해줘야 한다. */
+    /** Ui Thread 에서 수행하면 error 가 발생한다. */
+    fun insertTodo(todoModel: TodoModel)  = viewModelScope.launch(Dispatchers.IO) {
         insertTodoUseCase(todo = todoModel)
     }
 
