@@ -7,6 +7,8 @@ interface TodoListRepository {
 
     fun getTodoList() : Flow<List<Todo>>
 
+    fun getTodo(id : Long) : Flow<Todo>
+
     fun insertTodo(todo: Todo)
 
     fun updateTodo(todo: Todo)

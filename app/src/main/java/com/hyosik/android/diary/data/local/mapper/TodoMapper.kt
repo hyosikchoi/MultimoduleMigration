@@ -22,3 +22,12 @@ fun Todo.toTodoEntity() : TodoEntity =
         hasCompleted = this.hasCompleted,
         lock = this.lock
     )
+
+fun TodoEntity.toTodo() : TodoModel =
+    TodoModel(
+        _id = this.id,
+        _title = this.title,
+        _description = this.description,
+        _hasCompleted = this.hasCompleted,
+        _lock = this.lock
+    )

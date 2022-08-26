@@ -14,3 +14,12 @@ fun List<Todo>.toTodoModel() : List<TodoModel> =
             _title = todoEntity.title
         )
     }
+
+fun Todo.toTodoModel() : TodoModel =
+    TodoModel(
+        _id = this.id,
+        _title = this.title,
+        _description = this.description,
+        _hasCompleted = this.hasCompleted,
+        _lock = this.lock
+    )

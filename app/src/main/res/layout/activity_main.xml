@@ -55,6 +55,8 @@
         android:id="@+id/insertTodoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/ic_edit"
+        android:backgroundTint="@color/blue_200"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="35dp"
         app:layout_constraintEnd_toEndOf="parent"

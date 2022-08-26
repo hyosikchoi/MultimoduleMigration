@@ -24,12 +24,24 @@ class TodoListRepositoryImpl @Inject constructor(
         }
     }
 
+    override fun getTodo(id :Long): Flow<Todo> {
+        return todoDao.getById(id = id).map { todo ->
+            todo.toTodo()
+        }
+    }
+
     override fun insertTodo(todo: Todo) {
         todoDao.insert(todoEntity = todo.toTodoEntity())
     }
 
     override fun updateTodo(todo: Todo) {
-        TODO("Not yet implemented")
+        todoDao.update(
+            id = todo.id!!,
+            title = todo.title,
+            description = todo.description,
+            hasComplete = todo.hasCompleted,
+            lock = todo.lock
+        )
     }
 
     override fun deleteTodo(id: Long) {
