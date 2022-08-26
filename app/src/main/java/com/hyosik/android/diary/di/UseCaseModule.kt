@@ -1,10 +1,7 @@
 package com.hyosik.android.diary.di
 
 import com.hyosik.android.diary.domain.repository.TodoListRepository
-import com.hyosik.android.diary.domain.usecase.GetTodoListUsecase
-import com.hyosik.android.diary.domain.usecase.GetTodoUseCase
-import com.hyosik.android.diary.domain.usecase.InsertTodoUseCase
-import com.hyosik.android.diary.domain.usecase.UpdateTodoUseCase
+import com.hyosik.android.diary.domain.usecase.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -32,6 +29,11 @@ object UseCaseModule {
     @Provides
     fun providesUpdateTodoUseCase(todoListRepository: TodoListRepository) : UpdateTodoUseCase {
         return UpdateTodoUseCase(todoListRepository = todoListRepository)
+    }
+
+    @Provides
+    fun providesDeleteTodoUseCase(todoListRepository: TodoListRepository) : DeleteTodoUseCase {
+        return DeleteTodoUseCase(todoListRepository = todoListRepository)
     }
 
 }

@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hyosik.android.diary.data.local.model.TodoModel
+import com.hyosik.android.diary.domain.usecase.DeleteTodoUseCase
 import com.hyosik.android.diary.domain.usecase.GetTodoListUsecase
 import com.hyosik.android.diary.domain.usecase.InsertTodoUseCase
 import com.hyosik.android.diary.presentation.mapper.toTodoModel
@@ -19,7 +20,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val getTodoListUsecase: GetTodoListUsecase
+    private val getTodoListUsecase: GetTodoListUsecase,
+    private val deleteTodoUseCase: DeleteTodoUseCase
 ) : ViewModel() {
 
     private val _uiState : MutableStateFlow<UiState> = MutableStateFlow(UiState.UnInitialized)
@@ -35,5 +37,10 @@ class MainViewModel @Inject constructor(
                 else _uiState.value = UiState.Empty
             }
     }
+
+    fun deleteTodo(id : Long) = viewModelScope.launch(Dispatchers.IO) {
+        deleteTodoUseCase(id = id)
+    }
+
 
 }

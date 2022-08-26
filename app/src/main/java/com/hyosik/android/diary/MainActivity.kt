@@ -23,7 +23,11 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this , DetailActivity::class.java)
         intent.putExtra(DetailActivity.DETAIL_ID,todoModel.id)
         startActivity(intent)
-    })
+    },
+        deleteClickListener = { id ->
+            viewModel.deleteTodo(id = id)
+        }
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -45,6 +45,6 @@ class TodoListRepositoryImpl @Inject constructor(
     }
 
     override fun deleteTodo(id: Long) {
-        TODO("Not yet implemented")
+        todoDao.delete(id = id)
     }
 }

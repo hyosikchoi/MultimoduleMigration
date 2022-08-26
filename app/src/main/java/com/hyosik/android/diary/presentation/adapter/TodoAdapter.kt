@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hyosik.android.diary.data.local.model.TodoModel
 import com.hyosik.android.diary.databinding.ItemTodoViewholderBinding
 
-class TodoAdapter(private val itemClickListener : (TodoModel) -> Unit) : ListAdapter<TodoModel,TodoAdapter.TodoViewHolder>(diffUtil) {
+class TodoAdapter(private val itemClickListener : (TodoModel) -> Unit , private val deleteClickListener : (Long) -> Unit) : ListAdapter<TodoModel,TodoAdapter.TodoViewHolder>(diffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
         return TodoViewHolder(ItemTodoViewholderBinding.inflate(LayoutInflater.from(parent.context), parent , false))
@@ -24,6 +24,9 @@ class TodoAdapter(private val itemClickListener : (TodoModel) -> Unit) : ListAda
             todoModel = todo
             root.setOnClickListener {
                 itemClickListener(todo)
+            }
+            deleteTodoButton.setOnClickListener {
+                deleteClickListener(todo.id!!)
             }
         }
 

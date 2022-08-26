@@ -19,6 +19,6 @@ interface TodoDao {
     fun update(id : Long , title : String , description : String , hasComplete : Boolean , lock : Boolean)
 
     @Query("DELETE FROM TodoEntity WHERE id = :id")
-    suspend fun delete(id : Long)
+    fun delete(id : Long)
 
 }
