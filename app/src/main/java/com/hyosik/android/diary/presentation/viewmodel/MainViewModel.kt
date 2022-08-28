@@ -9,6 +9,7 @@ import com.hyosik.android.diary.data.local.model.TodoModel
 import com.hyosik.android.diary.domain.usecase.DeleteTodoUseCase
 import com.hyosik.android.diary.domain.usecase.GetTodoListUsecase
 import com.hyosik.android.diary.domain.usecase.InsertTodoUseCase
+import com.hyosik.android.diary.domain.usecase.TodoUseCases
 import com.hyosik.android.diary.presentation.mapper.toTodoModel
 import com.hyosik.android.diary.presentation.state.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,8 +21,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val getTodoListUsecase: GetTodoListUsecase,
-    private val deleteTodoUseCase: DeleteTodoUseCase
+    private val todoUseCases: TodoUseCases
 ) : ViewModel() {
 
     private val _uiState : MutableStateFlow<UiState> = MutableStateFlow(UiState.UnInitialized)
@@ -29,7 +29,7 @@ class MainViewModel @Inject constructor(
     val uiState : StateFlow<UiState> = _uiState.asStateFlow()
 
     fun fetchTodoList() = viewModelScope.launch {
-        getTodoListUsecase()
+        todoUseCases.getTodoList()
             .onStart { _uiState.value = UiState.Loading }
             .catch { cause -> _uiState.value = UiState.Error(cause.toString()) }
             .collectLatest { todoList ->
@@ -39,7 +39,7 @@ class MainViewModel @Inject constructor(
     }
 
     fun deleteTodo(id : Long) = viewModelScope.launch(Dispatchers.IO) {
-        deleteTodoUseCase(id = id)
+        todoUseCases.deleteTodo(id = id)
     }
 
 

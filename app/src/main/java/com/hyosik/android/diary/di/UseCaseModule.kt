@@ -36,4 +36,21 @@ object UseCaseModule {
         return DeleteTodoUseCase(todoListRepository = todoListRepository)
     }
 
+    @Provides
+    fun providesTodoUsecases(
+        getTodoUseCase: GetTodoUseCase,
+        getTodoListUsecase: GetTodoListUsecase,
+        insertTodoUseCase: InsertTodoUseCase,
+        updateTodoUseCase: UpdateTodoUseCase,
+        deleteTodoUseCase: DeleteTodoUseCase
+    ) : TodoUseCases {
+        return TodoUseCases(
+            getTodo = getTodoUseCase,
+            getTodoList = getTodoListUsecase,
+            insertTodo = insertTodoUseCase,
+            updateTodo = updateTodoUseCase,
+            deleteTodo = deleteTodoUseCase
+        )
+    }
+
 }
