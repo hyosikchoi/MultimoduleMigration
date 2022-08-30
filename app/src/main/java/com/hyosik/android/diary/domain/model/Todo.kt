@@ -6,4 +6,5 @@ interface Todo {
     val description : String
     val hasCompleted : Boolean
     val lock : Boolean
+    val password : String
 }

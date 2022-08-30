@@ -42,6 +42,18 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="hi" />
 
+        <ImageView
+            android:id="@+id/lockImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_lock"
+            android:background="@null"
+            android:visibility="@{todoModel.lock}"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toEndOf="@+id/titleTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
         <ImageButton
             android:id="@+id/deleteTodoButton"
             android:layout_width="wrap_content"

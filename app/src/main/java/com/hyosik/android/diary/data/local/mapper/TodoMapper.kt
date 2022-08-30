@@ -11,7 +11,8 @@ fun List<TodoEntity>.toTodo() : List<TodoModel> =
             _description = todoEntity.description,
             _lock = todoEntity.lock,
             _hasCompleted = todoEntity.hasCompleted,
-            _title = todoEntity.title
+            _title = todoEntity.title,
+            _password = todoEntity.password
         )
     }
 
@@ -20,7 +21,8 @@ fun Todo.toTodoEntity() : TodoEntity =
         title = this.title,
         description = this.description,
         hasCompleted = this.hasCompleted,
-        lock = this.lock
+        lock = this.lock,
+        password = this.password
     )
 
 fun TodoEntity.toTodo() : TodoModel =
@@ -29,5 +31,6 @@ fun TodoEntity.toTodo() : TodoModel =
         _title = this.title,
         _description = this.description,
         _hasCompleted = this.hasCompleted,
-        _lock = this.lock
+        _lock = this.lock,
+        _password = this.password
     )

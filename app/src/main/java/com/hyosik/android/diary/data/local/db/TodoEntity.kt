@@ -12,5 +12,6 @@ data class TodoEntity(
     val title : String,
     val description : String,
     val hasCompleted : Boolean = false,
-    val lock : Boolean = false
+    val lock : Boolean = false,
+    val password : String = ""
 )

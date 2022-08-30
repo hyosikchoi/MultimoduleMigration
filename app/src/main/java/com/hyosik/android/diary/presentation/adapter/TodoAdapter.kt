@@ -2,11 +2,13 @@ package com.hyosik.android.diary.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.hyosik.android.diary.data.local.model.TodoModel
 import com.hyosik.android.diary.databinding.ItemTodoViewholderBinding
+import com.hyosik.android.diary.presentation.CustomDialog
 
 class TodoAdapter(private val itemClickListener : (TodoModel) -> Unit , private val deleteClickListener : (Long) -> Unit) : ListAdapter<TodoModel,TodoAdapter.TodoViewHolder>(diffUtil) {
 
@@ -20,10 +22,23 @@ class TodoAdapter(private val itemClickListener : (TodoModel) -> Unit , private 
 
     inner class TodoViewHolder(private val binding : ItemTodoViewholderBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(todo: TodoModel)  = with(binding) {
+        fun bind(todo: TodoModel) = with(binding) {
             todoModel = todo
             root.setOnClickListener {
-                itemClickListener(todo)
+                if(todo.lock) {
+                   CustomDialog(
+                       binding.root.context,
+                       pwCallback = { pw ->
+                           if(pw == todo.password) {
+                               itemClickListener(todo)
+                           } else {
+                               Toast.makeText(binding.root.context , "비밀번호가 틀렸습니다." , Toast.LENGTH_SHORT).show()
+                           }
+                       }
+                   ).show()
+                } else {
+                    itemClickListener(todo)
+                }
             }
             deleteTodoButton.setOnClickListener {
                 deleteClickListener(todo.id!!)

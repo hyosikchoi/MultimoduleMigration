@@ -26,6 +26,8 @@ class DetailActivity : AppCompatActivity() {
 
     private var id : Long? = null
 
+    private var password : String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this , R.layout.activity_detail)
@@ -37,6 +39,21 @@ class DetailActivity : AppCompatActivity() {
         }
         binding.detailViewModel = viewModel
         viewModel.fetchTodo(id = id)
+
+        binding.lockCheckBox.setOnClickListener {
+            if(binding.lockCheckBox.isChecked) {
+                CustomDialog(
+                 context = this,
+                 pwCallback = { pwString ->
+                     password = pwString
+                 }
+              ).show()
+            } else {
+                password = ""
+            }
+        }
+
+
     }
 
     fun insertTodo() {
@@ -46,7 +63,8 @@ class DetailActivity : AppCompatActivity() {
                 _title = binding.titleEditTextView.text.toString(),
                 _description = binding.descriptionEditTextView.text.toString(),
                 _hasCompleted = false,
-                _lock = false
+                _lock = binding.lockCheckBox.isChecked,
+                _password = password
             ))
             Toast.makeText(this,"저장되었습니다." , Toast.LENGTH_SHORT).show()
             finish()
