@@ -1,7 +1,7 @@
-package com.hyosik.android.diary.domain.usecase
+package com.hyosik.android.domain.usecase
 
-import com.hyosik.android.diary.domain.model.Todo
-import com.hyosik.android.diary.domain.repository.TodoListRepository
+import com.hyosik.android.domain.model.Todo
+import com.hyosik.android.domain.repository.TodoListRepository
 import kotlinx.coroutines.flow.Flow
 
 class GetTodoListUsecase(

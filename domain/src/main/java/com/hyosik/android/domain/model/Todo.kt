@@ -1,4 +1,4 @@
-package com.hyosik.android.diary.domain.model
+package com.hyosik.android.domain.model
 
 interface Todo {
     val id : Long?

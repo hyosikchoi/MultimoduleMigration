@@ -2,7 +2,7 @@ package com.hyosik.android.diary.di
 
 import com.hyosik.android.diary.data.local.TodoListRepositoryImpl
 import com.hyosik.android.diary.data.local.db.TodoDao
-import com.hyosik.android.diary.domain.repository.TodoListRepository
+import com.hyosik.android.domain.repository.TodoListRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

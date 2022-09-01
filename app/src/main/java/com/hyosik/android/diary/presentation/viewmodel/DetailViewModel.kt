@@ -3,13 +3,10 @@ package com.hyosik.android.diary.presentation.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hyosik.android.diary.data.local.model.TodoModel
-import com.hyosik.android.diary.domain.usecase.GetTodoUseCase
-import com.hyosik.android.diary.domain.usecase.InsertTodoUseCase
-import com.hyosik.android.diary.domain.usecase.TodoUseCases
-import com.hyosik.android.diary.domain.usecase.UpdateTodoUseCase
 import com.hyosik.android.diary.presentation.enum.DetailMode
 import com.hyosik.android.diary.presentation.mapper.toTodoModel
 import com.hyosik.android.diary.presentation.state.DetailUiState
+import com.hyosik.android.domain.usecase.TodoUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*

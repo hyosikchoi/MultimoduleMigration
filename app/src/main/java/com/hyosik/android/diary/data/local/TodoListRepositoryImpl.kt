@@ -3,13 +3,10 @@ package com.hyosik.android.diary.data.local
 import com.hyosik.android.diary.data.local.db.TodoDao
 import com.hyosik.android.diary.data.local.mapper.toTodo
 import com.hyosik.android.diary.data.local.mapper.toTodoEntity
-import com.hyosik.android.diary.data.local.model.TodoModel
-import com.hyosik.android.diary.domain.model.Todo
-import com.hyosik.android.diary.domain.repository.TodoListRepository
+import com.hyosik.android.domain.model.Todo
+import com.hyosik.android.domain.repository.TodoListRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 

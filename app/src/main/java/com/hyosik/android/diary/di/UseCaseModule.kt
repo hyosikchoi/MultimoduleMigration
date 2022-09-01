@@ -1,7 +1,7 @@
 package com.hyosik.android.diary.di
 
-import com.hyosik.android.diary.domain.repository.TodoListRepository
-import com.hyosik.android.diary.domain.usecase.*
+import com.hyosik.android.domain.repository.TodoListRepository
+import com.hyosik.android.domain.usecase.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

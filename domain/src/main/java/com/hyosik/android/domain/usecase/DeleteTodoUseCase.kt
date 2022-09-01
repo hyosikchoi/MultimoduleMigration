@@ -1,6 +1,7 @@
-package com.hyosik.android.diary.domain.usecase
+package com.hyosik.android.domain.usecase
 
-import com.hyosik.android.diary.domain.repository.TodoListRepository
+import com.hyosik.android.domain.repository.TodoListRepository
+
 
 class DeleteTodoUseCase(
     private val todoListRepository: TodoListRepository

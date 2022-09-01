@@ -1,6 +1,6 @@
-package com.hyosik.android.diary.domain.repository
+package com.hyosik.android.domain.repository
 
-import com.hyosik.android.diary.domain.model.Todo
+import com.hyosik.android.domain.model.Todo
 import kotlinx.coroutines.flow.Flow
 
 interface TodoListRepository {

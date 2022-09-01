@@ -1,21 +1,15 @@
 package com.hyosik.android.diary.presentation
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.lifecycleScope
 import com.hyosik.android.diary.R
 import com.hyosik.android.diary.data.local.model.TodoModel
 import com.hyosik.android.diary.databinding.ActivityDetailBinding
-import com.hyosik.android.diary.presentation.state.DetailUiState
 import com.hyosik.android.diary.presentation.viewmodel.DetailViewModel
-import com.hyosik.android.diary.presentation.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {

@@ -1,6 +1,7 @@
 package com.hyosik.android.diary.data.local.model
 
-import com.hyosik.android.diary.domain.model.Todo
+import com.hyosik.android.domain.model.Todo
+
 
 data class TodoModel(
     private val _id : Long?,

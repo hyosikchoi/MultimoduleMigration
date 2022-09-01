@@ -1,20 +1,12 @@
 package com.hyosik.android.diary.presentation.viewmodel
 
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.hyosik.android.diary.data.local.model.TodoModel
-import com.hyosik.android.diary.domain.usecase.DeleteTodoUseCase
-import com.hyosik.android.diary.domain.usecase.GetTodoListUsecase
-import com.hyosik.android.diary.domain.usecase.InsertTodoUseCase
-import com.hyosik.android.diary.domain.usecase.TodoUseCases
 import com.hyosik.android.diary.presentation.mapper.toTodoModel
 import com.hyosik.android.diary.presentation.state.UiState
+import com.hyosik.android.domain.usecase.TodoUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
-import com.hyosik.android.diary.data.local.model.TodoModel
 import com.hyosik.android.diary.databinding.ActivityMainBinding
 import com.hyosik.android.diary.presentation.DetailActivity
 import com.hyosik.android.diary.presentation.adapter.TodoAdapter
