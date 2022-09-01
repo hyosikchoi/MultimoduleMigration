@@ -1,5 +1,3 @@
-package kr.co.buildsrc
-
 object Versions {
     const val KOTLIN_VERSION = "1.7.10"
     const val KOTLINX_COROUTINES = "1.6.1"

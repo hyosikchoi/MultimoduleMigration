@@ -1,9 +1,3 @@
-import kr.co.buildsrc.AndroidTest
-import kr.co.buildsrc.AndroidX
-import kr.co.buildsrc.Google
-import kr.co.buildsrc.Kotlin
-import kr.co.buildsrc.UnitTest
-
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
