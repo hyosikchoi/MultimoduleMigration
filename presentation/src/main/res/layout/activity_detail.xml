@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="detailActivity"
+            type="com.hyosik.android.presentation.DetailActivity" />
+
+        <variable
+            name="detailViewModel"
+            type="com.hyosik.android.presentation.viewmodel.DetailViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <EditText
+            android:id="@+id/titleEditTextView"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:hint="@string/title_hint"
+            app:title="@{detailViewModel.detailUiState}"
+            android:inputType="text"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/descriptionEditTextView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/transparent"
+            android:gravity="top|left"
+            android:hint="@string/description_hint"
+            app:description="@{detailViewModel.detailUiState}"
+            android:maxLines="15"
+            android:layout_margin="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/saveButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleEditTextView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/saveButton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:text="@string/save"
+            android:onClick="@{() -> detailActivity.insertTodo()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionEditTextView" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancelButton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:text="@string/cancel"
+            android:onClick="@{() -> detailActivity.finishActivity()}"
+            app:layout_constraintBottom_toBottomOf="@+id/saveButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/saveButton" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/titleEditTextView"
+            app:layout_constraintTop_toTopOf="@id/titleEditTextView"
+            app:layout_constraintBottom_toBottomOf="@id/titleEditTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+            <CheckBox
+                android:id="@+id/lockCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{detailViewModel.detailUiState.todo != null ? detailViewModel.detailUiState.todo.lock : false}"
+                android:layout_centerInParent="true"
+                android:button="@drawable/ic_lock_check" />
+        </RelativeLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

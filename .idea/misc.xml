@@ -6,6 +6,11 @@
         <entry key="..\:/Diary/app/src/main/res/layout/activity_detail.xml" value="0.17806484295845998" />
         <entry key="..\:/Diary/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
         <entry key="..\:/Diary/app/src/main/res/layout/item_todo_viewholder.xml" value="0.36614583333333334" />
+        <entry key="..\:/Diary/presentation/src/main/res/drawable/ic_delete.xml" value="0.28" />
+        <entry key="..\:/Diary/presentation/src/main/res/layout/activity_detail.xml" value="0.36614583333333334" />
+        <entry key="..\:/Diary/presentation/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Diary/presentation/src/main/res/layout/dialog_password.xml" value="0.36614583333333334" />
+        <entry key="..\:/Diary/presentation/src/main/res/layout/item_todo_viewholder.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/soc/Documents/MultimoduleMigration/app/src/main/res/drawable/ic_lock_check.xml" value="0.2575" />
         <entry key="..\:/Users/soc/Documents/MultimoduleMigration/app/src/main/res/layout/activity_detail.xml" value="0.2" />
         <entry key="..\:/Users/soc/Documents/MultimoduleMigration/app/src/main/res/layout/activity_main.xml" value="0.2" />

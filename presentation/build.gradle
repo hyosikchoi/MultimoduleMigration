@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
@@ -10,9 +10,7 @@ apply from: rootProject.file("android.gradle")
 dependencies {
 
     implementation project(":domain")
-    implementation project(":data")
-    implementation project(":presentation")
-
+    
     implementation AndroidX.CORE_KTX
     implementation AndroidX.APP_COMPAT
     implementation Google.MATERIAL
@@ -21,20 +19,18 @@ dependencies {
     androidTestImplementation AndroidTest.ANDROID_JUNIT
     androidTestImplementation AndroidTest.ESPRESSO_CORE
 
-    // hilt
-    implementation Google.HILT_ANDROID
-    kapt Google.HILT_ANDROID_COMPILER
+    implementation(Google.HILT_ANDROID)
+    kapt          (Google.HILT_ANDROID_COMPILER)
 
-    // room
-    implementation AndroidX.ROOM_RUNTIME
-    implementation AndroidX.ROOM_KTX
-    kapt AndroidX.ROOM_COMPILE
-
-    // coroutine
-    implementation Kotlin.COROUTINES_CORE
-    implementation Kotlin.COROUTINES_ANDROID
+    //Coroutine
+    implementation(Kotlin.COROUTINES_CORE)
+    implementation(Kotlin.COROUTINES_ANDROID)
+    testImplementation(UnitTest.COROUTINE_TEST)
+    androidTestImplementation(AndroidTest.ANDROID_COROUTINE_TEST)
 
     // lifecycle
     implementation AndroidX.ACTIVITY_KTX
     implementation AndroidX.LIFECYCLE_VIEWMODEL_KTX
+
+
 }
