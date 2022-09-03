@@ -6,6 +6,7 @@
       <module name="Diary.buildSrc" target="11" />
       <module name="Diary.buildSrc.main" target="11" />
       <module name="Diary.buildSrc.test" target="11" />
+      <module name="Diary.data" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

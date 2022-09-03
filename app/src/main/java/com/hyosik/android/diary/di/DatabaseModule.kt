@@ -2,8 +2,8 @@ package com.hyosik.android.diary.di
 
 import android.content.Context
 import androidx.room.Room
-import com.hyosik.android.diary.data.local.db.AppDatabase
-import com.hyosik.android.diary.data.local.db.TodoDao
+import com.hyosik.android.data.local.db.AppDatabase
+import com.hyosik.android.data.local.db.TodoDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -6,11 +6,11 @@ import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.hyosik.android.diary.data.local.model.TodoModel
 import com.hyosik.android.diary.databinding.ItemTodoViewholderBinding
 import com.hyosik.android.diary.presentation.CustomDialog
+import com.hyosik.android.diary.presentation.model.TodoVO
 
-class TodoAdapter(private val itemClickListener : (TodoModel) -> Unit , private val deleteClickListener : (Long) -> Unit) : ListAdapter<TodoModel,TodoAdapter.TodoViewHolder>(diffUtil) {
+class TodoAdapter(private val itemClickListener : (TodoVO) -> Unit, private val deleteClickListener : (Long) -> Unit) : ListAdapter<TodoVO,TodoAdapter.TodoViewHolder>(diffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
         return TodoViewHolder(ItemTodoViewholderBinding.inflate(LayoutInflater.from(parent.context), parent , false))
@@ -22,7 +22,7 @@ class TodoAdapter(private val itemClickListener : (TodoModel) -> Unit , private 
 
     inner class TodoViewHolder(private val binding : ItemTodoViewholderBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(todo: TodoModel) = with(binding) {
+        fun bind(todo: TodoVO) = with(binding) {
             todoModel = todo
             root.setOnClickListener {
                 if(todo.lock) {
@@ -48,13 +48,13 @@ class TodoAdapter(private val itemClickListener : (TodoModel) -> Unit , private 
     }
 
     companion object {
-        val diffUtil = object : DiffUtil.ItemCallback<TodoModel>() {
+        val diffUtil = object : DiffUtil.ItemCallback<TodoVO>() {
 
-            override fun areItemsTheSame(oldItem: TodoModel, newItem: TodoModel): Boolean {
+            override fun areItemsTheSame(oldItem: TodoVO, newItem: TodoVO): Boolean {
                 return oldItem.id == newItem.id
             }
 
-            override fun areContentsTheSame(oldItem: TodoModel, newItem: TodoModel): Boolean {
+            override fun areContentsTheSame(oldItem: TodoVO, newItem: TodoVO): Boolean {
                 return oldItem == newItem
             }
         }

@@ -1,8 +1,8 @@
-package com.hyosik.android.diary.data.local
+package com.hyosik.android.data.local
 
-import com.hyosik.android.diary.data.local.db.TodoDao
-import com.hyosik.android.diary.data.local.mapper.toTodo
-import com.hyosik.android.diary.data.local.mapper.toTodoEntity
+import com.hyosik.android.data.local.db.TodoDao
+import com.hyosik.android.data.local.mapper.toTodo
+import com.hyosik.android.data.local.mapper.toTodoEntity
 import com.hyosik.android.domain.model.Todo
 import com.hyosik.android.domain.repository.TodoListRepository
 import kotlinx.coroutines.CoroutineDispatcher
@@ -11,8 +11,7 @@ import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class TodoListRepositoryImpl @Inject constructor(
-    private val todoDao: TodoDao,
-    private val ioDispatcher: CoroutineDispatcher
+    private val todoDao: TodoDao
 ) : TodoListRepository {
 
     override fun getTodoList(): Flow<List<Todo>> {

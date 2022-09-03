@@ -2,7 +2,7 @@ package com.hyosik.android.diary.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.hyosik.android.diary.presentation.mapper.toTodoModel
+import com.hyosik.android.diary.presentation.mapper.toTodoVO
 import com.hyosik.android.diary.presentation.state.UiState
 import com.hyosik.android.domain.usecase.TodoUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -25,7 +25,7 @@ class MainViewModel @Inject constructor(
             .onStart { _uiState.value = UiState.Loading }
             .catch { cause -> _uiState.value = UiState.Error(cause.toString()) }
             .collectLatest { todoList ->
-                if(todoList.isNotEmpty()) _uiState.value  = UiState.Success(todoList.toTodoModel())
+                if(todoList.isNotEmpty()) _uiState.value  = UiState.Success(todoList.toTodoVO())
                 else _uiState.value = UiState.Empty
             }
     }

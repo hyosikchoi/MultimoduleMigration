@@ -1,11 +1,11 @@
 package com.hyosik.android.diary.presentation.mapper
 
-import com.hyosik.android.diary.data.local.model.TodoModel
+import com.hyosik.android.diary.presentation.model.TodoVO
 import com.hyosik.android.domain.model.Todo
 
-fun List<Todo>.toTodoModel() : List<TodoModel> =
+fun List<Todo>.toTodoVO() : List<TodoVO> =
     this.map { todoEntity ->
-        TodoModel(
+        TodoVO(
             _id = todoEntity.id,
             _description = todoEntity.description,
             _lock = todoEntity.lock,
@@ -15,8 +15,8 @@ fun List<Todo>.toTodoModel() : List<TodoModel> =
         )
     }
 
-fun Todo.toTodoModel() : TodoModel =
-    TodoModel(
+fun Todo.toTodoVO() : TodoVO =
+    TodoVO(
         _id = this.id,
         _title = this.title,
         _description = this.description,

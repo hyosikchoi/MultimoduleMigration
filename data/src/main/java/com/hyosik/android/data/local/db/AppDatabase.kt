@@ -1,4 +1,4 @@
-package com.hyosik.android.diary.data.local.db
+package com.hyosik.android.data.local.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

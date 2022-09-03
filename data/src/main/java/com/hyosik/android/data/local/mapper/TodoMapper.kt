@@ -1,7 +1,7 @@
-package com.hyosik.android.diary.data.local.mapper
+package com.hyosik.android.data.local.mapper
 
-import com.hyosik.android.diary.data.local.db.TodoEntity
-import com.hyosik.android.diary.data.local.model.TodoModel
+import com.hyosik.android.data.local.db.TodoEntity
+import com.hyosik.android.data.local.model.TodoModel
 import com.hyosik.android.domain.model.Todo
 
 fun List<TodoEntity>.toTodo() : List<TodoModel> =

@@ -1,4 +1,4 @@
-package com.hyosik.android.diary.data.local.model
+package com.hyosik.android.data.local.model
 
 import com.hyosik.android.domain.model.Todo
 

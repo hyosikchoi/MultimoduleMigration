@@ -6,8 +6,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.hyosik.android.diary.R
-import com.hyosik.android.diary.data.local.model.TodoModel
 import com.hyosik.android.diary.databinding.ActivityDetailBinding
+import com.hyosik.android.diary.presentation.model.TodoVO
 import com.hyosik.android.diary.presentation.viewmodel.DetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -52,7 +52,7 @@ class DetailActivity : AppCompatActivity() {
 
     fun insertTodo() {
         if(binding.titleEditTextView.text.isNotEmpty() && binding.descriptionEditTextView.text.isNotEmpty()) {
-            viewModel.insertTodo(TodoModel(
+            viewModel.insertTodo(TodoVO(
                 _id = id,
                 _title = binding.titleEditTextView.text.toString(),
                 _description = binding.descriptionEditTextView.text.toString(),
