@@ -1,11 +1,14 @@
 package com.hyosik.android.presentation.viewmodel
 
+import android.util.Log
 import com.hyosik.android.presentation.state.UiState
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hyosik.android.domain.usecase.TodoUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import toTodoVO
@@ -19,6 +22,10 @@ class MainViewModel @Inject constructor(
     private val _uiState : MutableStateFlow<UiState> = MutableStateFlow(UiState.UnInitialized)
 
     val uiState : StateFlow<UiState> = _uiState.asStateFlow()
+
+    private val _splashState = MutableStateFlow<Boolean>(false)
+
+    val splashState = _splashState.asStateFlow()
 
     fun fetchTodoList() = viewModelScope.launch {
         todoUseCases.getTodoList()
@@ -34,5 +41,12 @@ class MainViewModel @Inject constructor(
         todoUseCases.deleteTodo(id = id)
     }
 
+    fun splashInit() = viewModelScope.launch {
+        launch {
+            delay(2000)
+            _splashState.value = true
+        }
+        fetchTodoList()
+    }
 
 }

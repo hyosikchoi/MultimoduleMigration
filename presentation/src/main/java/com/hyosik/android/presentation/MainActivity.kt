@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         binding.viewModel = viewModel
         binding.executePendingBindings()
         binding.todoListRecyclerView.adapter = todoAdapter
-        viewModel.fetchTodoList()
+        viewModel.splashInit()
 
         binding.insertTodoButton.setOnClickListener {
             val intent = Intent(this@MainActivity , DetailActivity::class.java)
