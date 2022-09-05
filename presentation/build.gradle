@@ -19,6 +19,10 @@ dependencies {
     androidTestImplementation AndroidTest.ANDROID_JUNIT
     androidTestImplementation AndroidTest.ESPRESSO_CORE
 
+    // splash
+    implementation AndroidX.SPLASH_SCREEN
+
+    // hilt
     implementation(Google.HILT_ANDROID)
     kapt          (Google.HILT_ANDROID_COMPILER)
 

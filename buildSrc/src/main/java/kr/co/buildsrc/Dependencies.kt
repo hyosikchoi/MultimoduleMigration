@@ -23,6 +23,7 @@ object Versions {
     const val ESPRESSO_CORE = "3.4.0"
     const val TRUTH = "1.0.1"
     const val ROOM = "2.4.3"
+    const val SPLASH_SCREEN = "1.0.0"
 }
 
 object Kotlin {
@@ -43,6 +44,8 @@ object AndroidX {
     const val ROOM_RUNTIME = "androidx.room:room-runtime:${Versions.ROOM}"
     const val ROOM_COMPILE = "androidx.room:room-compiler:${Versions.ROOM}"
     const val ROOM_KTX = "androidx.room:room-ktx:${Versions.ROOM}"
+    const val SPLASH_SCREEN = "androidx.core:core-splashscreen:${Versions.SPLASH_SCREEN}"
+
 }
 
 object Google {
