@@ -36,5 +36,8 @@ dependencies {
     implementation AndroidX.ACTIVITY_KTX
     implementation AndroidX.LIFECYCLE_VIEWMODEL_KTX
 
+    // Sentry
+    implementation Libraries.SENTRY
+
 
 }

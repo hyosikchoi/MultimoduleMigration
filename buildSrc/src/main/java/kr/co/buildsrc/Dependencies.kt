@@ -24,6 +24,8 @@ object Versions {
     const val TRUTH = "1.0.1"
     const val ROOM = "2.4.3"
     const val SPLASH_SCREEN = "1.0.0"
+    const val SENTRY = "6.4.1"
+    const val SENTRY_PLUGIN = "1.7.35"
 }
 
 object Kotlin {
@@ -59,6 +61,7 @@ object Libraries {
     const val RETROFIT_CONVERTER_GSON = "com.squareup.retrofit2:converter-gson:${Versions.RETROFIT}"
     const val OKHTTP = "com.squareup.okhttp3:okhttp:${Versions.OKHTTP}"
     const val OKHTTP_LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP}"
+    const val SENTRY = "io.sentry:sentry-android:${Versions.SENTRY}"
 }
 
 object UnitTest {

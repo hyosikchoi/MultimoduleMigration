@@ -3,6 +3,7 @@
     package="com.hyosik.android.presentation">
 
     <application>
+        <meta-data android:name="io.sentry.dsn" android:value="https://d60ab2cc26a74d46a045d3abce1814e7@o1397489.ingest.sentry.io/6722867" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

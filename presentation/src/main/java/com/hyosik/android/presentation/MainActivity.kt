@@ -1,18 +1,17 @@
 package com.hyosik.android.presentation
 
-import com.hyosik.android.presentation.adapter.TodoAdapter
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.CountDownTimer
-import android.view.View
-import android.view.ViewTreeObserver
+import android.util.Log
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.hyosik.android.presentation.adapter.TodoAdapter
 import com.hyosik.android.presentation.databinding.ActivityMainBinding
 import com.hyosik.android.presentation.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlin.concurrent.thread
+import io.sentry.Sentry
+
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -45,6 +44,5 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity , DetailActivity::class.java)
             startActivity(intent)
         }
-
     }
 }
