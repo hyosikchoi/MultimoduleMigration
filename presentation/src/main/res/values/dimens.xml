@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="dialog_title_text">20sp</dimen>
+    <dimen name="button_text1">18dp</dimen>
+    <dimen name="button_text2">16dp</dimen>
 </resources>

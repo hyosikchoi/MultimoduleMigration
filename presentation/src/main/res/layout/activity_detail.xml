@@ -48,24 +48,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleEditTextView" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.hyosik.android.presentation.design.button.DiaryButton
             android:id="@+id/saveButton"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
             android:text="@string/save"
+            style="@style/TextAppearance.Diary.Title1"
             android:onClick="@{() -> detailActivity.insertTodo()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/descriptionEditTextView" />
 
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.hyosik.android.presentation.design.button.DiaryButton
             android:id="@+id/cancelButton"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
             android:text="@string/cancel"
+            style="@style/TextAppearance.Diary.Title1"
             android:onClick="@{() -> detailActivity.finishActivity()}"
             app:layout_constraintBottom_toBottomOf="@+id/saveButton"
             app:layout_constraintStart_toStartOf="parent"
@@ -79,13 +81,14 @@
             app:layout_constraintBottom_toBottomOf="@id/titleEditTextView"
             app:layout_constraintEnd_toEndOf="parent"
             >
+
             <CheckBox
                 android:id="@+id/lockCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="@{detailViewModel.detailUiState.todo != null ? detailViewModel.detailUiState.todo.lock : false}"
                 android:layout_centerInParent="true"
-                android:button="@drawable/ic_lock_check" />
+                android:button="@drawable/ic_lock_check"
+                android:checked="@{detailViewModel.detailUiState.todo != null ? detailViewModel.detailUiState.todo.lock : false}" />
         </RelativeLayout>
 
 

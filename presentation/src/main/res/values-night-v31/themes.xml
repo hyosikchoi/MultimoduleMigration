@@ -21,6 +21,15 @@
         <item name="android:windowSplashScreenBackground">@color/yellow_500</item>
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_splash_transparent</item>
         <item name="android:windowSplashScreenAnimationDuration">2000</item>
-
     </style>
+
+    <!-- Custom Style -->
+    <style name="TextAppearance.Diary.Base.Title" parent="TextAppearance.AppCompat.Title">
+        <item name="fontFamily">@font/ulziro</item>
+    </style>
+
+    <style name="TextAppearance.Diary.Title1" parent="TextAppearance.Diary.Base.Title">
+        <item name="android:textSize">@dimen/button_text1</item>
+    </style>
+
 </resources>

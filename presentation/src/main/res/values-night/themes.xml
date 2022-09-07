@@ -16,4 +16,14 @@
         <!-- Background Color -->
         <item name="android:background">@color/yellow_500</item>
     </style>
+
+    <!-- Custom Style -->
+    <style name="TextAppearance.Diary.Base.Title" parent="TextAppearance.AppCompat.Title">
+        <item name="fontFamily">@font/ulziro</item>
+    </style>
+
+    <style name="TextAppearance.Diary.Title1" parent="TextAppearance.Diary.Base.Title">
+        <item name="android:textSize">@dimen/button_text1</item>
+    </style>
+
 </resources>
