@@ -9,17 +9,16 @@
             type="com.hyosik.android.presentation.model.TodoVO" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.hyosik.android.presentation.design.layout.ViewHolderLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         android:padding="20dp">
 
         <TextView
             android:id="@+id/idTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@null"
             android:text="@{String.valueOf(todoModel.id)}"
             style="@style/TextAppearance.Diary.Body2"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:background="@color/white"
+            android:background="@null"
             android:text="@{todoModel.title}"
             style="@style/TextAppearance.Diary.Body2"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -62,6 +61,5 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.hyosik.android.presentation.design.layout.ViewHolderLayout>
 </layout>

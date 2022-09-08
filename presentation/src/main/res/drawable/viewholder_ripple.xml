@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple android:color="@color/gray_200"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- border color -->
+    <!-- 전체를 gray 로 칠한다. -->
+    <item>
+        <color android:color="@color/gray_200"/>
+    </item>
+
+    <!-- background color -->
+    <!-- gray 위에 bottom만 1dp 뺀 나머지를 white 로 칠한다. -->
+    <item android:bottom="1dp">
+        <color android:color="@color/white"/>
+    </item>
+
+</ripple>
