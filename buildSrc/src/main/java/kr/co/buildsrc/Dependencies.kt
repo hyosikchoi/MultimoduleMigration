@@ -26,6 +26,7 @@ object Versions {
     const val SPLASH_SCREEN = "1.0.0"
     const val SENTRY = "6.4.1"
     const val SENTRY_PLUGIN = "1.7.35"
+    const val MOCKK = "1.12.0"
 }
 
 object Kotlin {
@@ -69,6 +70,7 @@ object UnitTest {
     const val MOCK_WEB_SERVER = "com.squareup.okhttp3:mockwebserver:${Versions.OKHTTP}"
     const val TRUTH = "com.google.truth:truth:${Versions.TRUTH}"
     const val COROUTINE_TEST = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.KOTLINX_COROUTINES_TEST}"
+    const val MOCKK = "io.mockk:mockk:${Versions.MOCKK}"
 }
 
 object AndroidTest {
