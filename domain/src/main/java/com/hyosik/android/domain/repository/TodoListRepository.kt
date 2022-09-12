@@ -9,10 +9,10 @@ interface TodoListRepository {
 
     fun getTodo(id : Long) : Flow<Todo>
 
-    fun insertTodo(todo: Todo)
+    suspend fun insertTodo(todo: Todo)
 
-    fun updateTodo(todo: Todo)
+    suspend fun updateTodo(todo: Todo)
 
-    fun deleteTodo(id : Long)
+    suspend fun deleteTodo(id : Long)
 
 }

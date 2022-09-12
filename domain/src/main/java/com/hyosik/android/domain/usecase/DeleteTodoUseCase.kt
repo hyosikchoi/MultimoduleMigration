@@ -7,7 +7,7 @@ class DeleteTodoUseCase(
     private val todoListRepository: TodoListRepository
 ) {
 
-    operator fun invoke(
+    suspend operator fun invoke(
         id : Long
     ) {
         todoListRepository.deleteTodo(id = id)

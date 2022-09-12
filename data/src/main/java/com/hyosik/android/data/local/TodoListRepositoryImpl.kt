@@ -26,11 +26,11 @@ class TodoListRepositoryImpl @Inject constructor(
         }
     }
 
-    override fun insertTodo(todo: Todo) {
+    override suspend fun insertTodo(todo: Todo) {
         todoDao.insert(todoEntity = todo.toTodoEntity())
     }
 
-    override fun updateTodo(todo: Todo) {
+    override suspend fun updateTodo(todo: Todo) {
         todoDao.update(
             id = todo.id!!,
             title = todo.title,
@@ -40,7 +40,7 @@ class TodoListRepositoryImpl @Inject constructor(
         )
     }
 
-    override fun deleteTodo(id: Long) {
+    override suspend fun deleteTodo(id: Long) {
         todoDao.delete(id = id)
     }
 }

@@ -37,7 +37,7 @@ class MainViewModel @Inject constructor(
             }
     }
 
-    fun deleteTodo(id : Long) = viewModelScope.launch(Dispatchers.IO) {
+    fun deleteTodo(id : Long) = viewModelScope.launch {
         todoUseCases.deleteTodo(id = id)
     }
 

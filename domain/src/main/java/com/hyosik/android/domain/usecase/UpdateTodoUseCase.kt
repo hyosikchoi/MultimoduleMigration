@@ -8,7 +8,7 @@ class UpdateTodoUseCase(
     private val todoListRepository: TodoListRepository
 ) {
 
-    operator fun invoke(
+    suspend operator fun invoke(
         todo : Todo
     ) {
         todoListRepository.updateTodo(todo = todo)

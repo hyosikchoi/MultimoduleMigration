@@ -13,12 +13,12 @@ interface TodoDao {
     fun getById(id : Long) : Flow<TodoEntity>
 
     @Insert
-    fun insert(todoEntity: TodoEntity)
+    suspend fun insert(todoEntity: TodoEntity)
 
     @Query("UPDATE TodoEntity SET title = :title , description = :description , hasCompleted = :hasComplete , lock = :lock WHERE id = :id")
-    fun update(id : Long , title : String , description : String , hasComplete : Boolean , lock : Boolean)
+    suspend fun update(id : Long , title : String , description : String , hasComplete : Boolean , lock : Boolean)
 
     @Query("DELETE FROM TodoEntity WHERE id = :id")
-    fun delete(id : Long)
+    suspend fun delete(id : Long)
 
 }

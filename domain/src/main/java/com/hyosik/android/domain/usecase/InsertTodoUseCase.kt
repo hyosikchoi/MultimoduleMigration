@@ -8,7 +8,7 @@ class InsertTodoUseCase(
     private val todoListRepository: TodoListRepository
 ) {
 
-    operator fun invoke(todo: Todo) {
+    suspend operator fun invoke(todo: Todo) {
         todoListRepository.insertTodo(todo)
     }
 
