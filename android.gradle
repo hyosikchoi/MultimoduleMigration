@@ -1,7 +1,9 @@
+def isApplicationPlugin = pluginManager.hasPlugin("com.android.application")
 android {
     compileSdk Versions.COMPILE_SDK_VERSION
 
     defaultConfig {
+        if(isApplicationPlugin) applicationId "com.hyosik.android.diary"
         minSdk Versions.MIN_SDK_VERSION
         targetSdk Versions.TARGET_SDK_VERSION
         versionCode 1
